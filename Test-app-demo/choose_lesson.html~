@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='de'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Schulung</title>
+    <link rel='stylesheet' href='nyan.css'/> 
+<script>
+function starten(event) {
+   //alert("display: "+this.selectedIndex);
+	window.location.assign("background.html")
+   localStorage.setItem("lessonNumber", JSON.stringify((this.selectedIndex)-1));
+}
+function zurueck() {
+    window.location.assign("erste_folie.html")
+}
+</script>
+</head>
+<body>
+
+Lautstärke aus!!!
+<br>
+
+
+<div id="selection">
+   <select id="rec_mode" onchange="starten.call(this, event)">  
+   	<option selected="selected">Wähle eine Stunde</option>      
+   </select>
+</div>
+ 
+<script>
+let unterrichtsStunde = localStorage.getItem("stunde");
+newstunde = JSON.parse(unterrichtsStunde);
+
+var options = newstunde;
+
+var selectBox = document.getElementById("rec_mode");
+
+for(var i = 0, l = options.length; i < l; i++){
+  var option = options[i];
+  selectBox.options.add( new Option(option.namen) );
+}
+</script>
+
+<br>
+<input type="button" value="Zurück" onclick="zurueck()">
+
+</body>
+</html>

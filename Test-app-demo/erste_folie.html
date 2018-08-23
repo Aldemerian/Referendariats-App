@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='de'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Schulung</title>
+    <link rel='stylesheet' href='background.css'/> 
+<script>
+function starten() {
+    window.location.assign("choose_lesson.html")
+}
+function create() {
+    window.location.assign("newelement.html")
+}
+function review() {
+    window.location.assign("review.html")
+}
+function tutorial() {
+    window.location.assign("tutorial.html")
+   }
+</script>
+</head>
+<body>
+
+<nav>
+<input type="button" value="Tutorial" onclick="tutorial()">
+<br>
+<input type="button" value="Wähle die zu startende Stunde" onclick="starten()">
+<br>
+<input type="button" value="Erzeuge neues Stundenlayout" onclick="create()">
+<br>
+<input type="button" value="Überprüfe die letzte gehaltene Stunde" onclick="review()">
+<br>
+
+</nav>
+
+<footer></footer>
+</body>
+</html>

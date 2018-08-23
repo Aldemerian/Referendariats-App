@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='de'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Schulung</title>
+    <link rel='stylesheet' href='background.css'/>
+</head>
+
+<body>
+
+<script>
+let unterrichtsStunde = localStorage.getItem("stunde");
+newstunde = JSON.parse(unterrichtsStunde);
+
+function addFields(event) {
+	//create elementNumber in storage
+	var selectBox = document.getElementById("rec_mode").value;
+	alert(selectBox);
+	localStorage.setItem("elementNumber", JSON.stringify(selectBox));
+	window.location.assign("newelement.html")
+}
+
+function remove(){
+ //löschen aus dem array
+ //nummer feststellen
+ console.log("gedrückt");
+}
+
+var txt = " ";
+function readLessons() {
+	for(var x in newstunde){
+		txt += "<li>" + newstunde[x].namen + " " + " <button type='button' onclick = 'remove()'>Entfernen</button>" +"</li>";
+		document.getElementById("p3").innerHTML = txt;	
+	}
+console.log(txt);
+//document.getElementById("p3").innerHTML = txt;
+
+//delete lessons 
+}
+
+
+</script>
+
+
+<div>
+Neue Stunde mit 
+  <input id="rec_mode" onchange="addFields.call(event)" type="number" name="quantity" min="1" max="20">
+Elementen erstellen.
+</div>
+
+<br>
+Diese Stunden sind schon erstellt:
+<ul id="p3"></ul>
+<!-- 
+
+Hier alle bisherigen Stunden aufführen
+
+ -->
+
+<script>
+readLessons();
+</script>
+</body>
+</html>

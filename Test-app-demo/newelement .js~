@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='de'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Schulung</title>
+    <link rel='stylesheet' href='background.css'/>
+   
+</head>
+
+<body>
+
+
+
+<ol>
+<li>Einführungsphase/Eröffnungsphase:</li>
+<ul>
+<li>Anknüpfungspunkte an die letzte Stunde</li>
+<li>Hausaufgaben prüfen</li>
+<li>Stundenprotokolle einsammeln</li>
+<li>o.ä.</li>
+</ul>
+<li>Präsentationsphase</li>
+<li>Übungsphase</li>
+<li>Anwendungsphase/Transferphase</li>
+<li>Schlussphase/Ausgangsphase:</li>
+<ul>
+<li>Zusammenfassen der Ergebnisse</li>
+<li>Erklären der Hausaufgaben</li>
+<li>Transfers</li>
+<li>Ausblick auf die nächste Stunde</li>
+<li>o.ä.</li>
+</ul>
+</ol>
+
+<input type= "namen" value="">
+<br>
+<ol id="p3"></ol>
+    
+<button type="button" onclick="submit()">OK</button>
+
+ <script type='text/javascript'>
+   
+var x = localStorage.getItem("elementNumber");   
+var elementNumber = JSON.parse(x);
+ 
+var txt = "";
+var l = elementNumber; 
+ 
+for (var k=0; k < l; k++){
+	txt += '<br> Namen des Elements:';
+	txt += '<input type= "eleNamen'+k+'" value="">';
+	txt += '<br> Dauer:';
+	txt += '<input type= "zeit'+k+'" value="">';
+	console.log(txt);
+}
+//each element create dom   
+document.getElementById("p3").innerHTML = txt;
+
+function submit() {
+	//create and save
+	
+}
+</script>
+
+</body>
+</html>

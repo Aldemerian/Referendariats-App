@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lesson>
+
+	<lesson1>
+		<start> 
+			<namen> Die Sus nach den Hausaufgaben fragen </namen>
+			<time> 3 </time>
+		</start>
+		<unit> 
+			<namen> Tafelbild anschreiben  </namen>
+			<time> 3 </time>
+		</unit>
+		<end>
+			<namen>Hausaufgaben anschreiben </namen>
+			<time> 3 </time>
+		</end>
+	</lesson1>
+
+	<lesson2>
+		<start> 
+			<namen> Tägliches Ritual </namen>
+			<time> 3 </time>
+		</start>
+		<unit> 
+			<namen> Gruppenarbeit  </namen>
+			<time> 10 </time>
+		</unit>
+		<end>
+			<namen> Abschlusskreis </namen>
+			<time> 10 </time>
+		</end>
+	</lesson2>
+
+</lesson>
+
+<!--
+var lesson1 = {
+	"teil1":{
+	"name": "Anfang der Stunde",
+	"zeit": "3",
+	}
+	"teil2":{
+	"name": "Gruppenarbeit",
+	"zeit": "15",
+	}
+
+}
+
+-->

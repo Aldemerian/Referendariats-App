@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang='de'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Schulung</title>
+    <link rel='stylesheet' href='background.css'/>
+	    <script type='text/javascript'>
+        function addFields(){
+            // Number of inputs to create
+            var number = document.getElementById("member").value;
+            // Container <div> where dynamic content will be placed
+            var container = document.getElementById("container");
+            // Clear previous contents of the container
+            while (container.hasChildNodes()) {
+                container.removeChild(container.lastChild);
+            }
+            for (i=0;i<number;i++){
+                // Append a node with a random text
+                container.appendChild(document.createTextNode("Member " + (i+1)));
+                // Create an <input> element, set its type and name attributes
+                var input = document.createElement("input");
+                input.type = "text";
+                input.name = "member" + i;
+                container.appendChild(input);
+                // Append a line break 
+                container.appendChild(document.createElement("br"));
+            }
+        }
+    function Lesson(ID, namen, anzahl, laenge, elemente) {
+    	this.namen = namen;
+    	this.id = ID;
+    	this.laenge = laenge;
+    	this.anzahl = anzahl;
+    	this.elemente = elemente;
+	 }
+	 var inputWhatEver = new lesson ();
+	 	Lesson.prototype.object= function saveIt() {
+	 		console.log("wäre ja gespeichert worden, aber...");
+			//whatevs copy und paste	 		
+	 	};
+
+var ID;
+var namen;
+// = document.getElementById("member").value;
+var anzahl;
+var laenge;
+var elemente;
+
+var mylesson = new Lesson(ID, namen, anzahl, laenge, elemente);
+	</script>
+</head>
+
+<body>
+
+<input type="text" id="member" name="member" value="">Number of members: (max. 10)<br />
+    <a href="#" id="filldetails" onclick="addFields()">Fill Details</a>
+    <div id="container"/>
+
+</body>
+</html>

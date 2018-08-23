@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang='de'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Schulung</title>
+    <link rel='stylesheet' href='background.css'/> 
+<script>
+var stunde;
+
+stunde = [
+		 {	"namen":"6a",
+			"eleNamen":	["Anfang der Stunde",
+				"Mitte der Stunde",
+				"Gruppenarbeit",
+				"Gruppenarbeit2",
+				"Ende der Stunde"
+				],
+			"zeit": ["1", "5", "3", "4", "10"]
+		},
+		{	"namen":"5a",
+			"eleNamen":	[
+				"foobar",
+				"Ende der Stunde"],
+			"zeit": ["1", "2"]
+		},
+		{	"namen":"7a",
+			"eleNamen":	[ 
+					"Anfang der Stunde",
+					"Ende der Stunde"],
+			"zeit": ["100", "2"]
+		},
+		{	"namen":"8a",		
+			"eleNamen":[ 
+					"Anfang der Stunde",
+					"Ende der Stunde"],
+			"zeit": ["1", "2"]
+		},
+		{	"namen":"9a",
+			"eleNamen":[
+				 "Anfang der Stunde",
+				 "Ende der Stunde"],
+					"zeit": ["1", "2"]
+		},
+		{	"namen":"10a",
+			"eleNamen": ["Anfang der Stunde",
+			"Ende der Stunde"],
+			"zeit": ["3", "4"]
+			}
+];
+
+function vorlage() {
+	localStorage.setItem("stunde", JSON.stringify(stunde));
+ 	var text = "Auf deinem Gerät wurde eine Vorlage für die Stunden erstellt";
+	document.getElementById("demo").innerHTML = text;
+}
+function tutorial() {
+    window.location.assign("tutorial.html")
+   }
+function zurueck() {
+	window.location.assign("erste_folie.html")
+}
+
+function layout() {
+	window.location.assign("newelement.html")
+}
+</script>
+</head>
+<body>
+
+
+<br>
+<input type="button" value="Erstelle eine Beispielstunde um die App zu testen" onclick="vorlage()">
+<p id= "demo"></p>
+<br>
+Eine Stunde kann aus folgenden Bestandteilen bestehen (dies ist nur ein Beispiel):
+<ol>
+<li>Einführungsphase/Eröffnungsphase (5 min):</li>
+<ul>
+<li>Anknüpfungspunkte an die letzte Stunde</li>
+<li>Hausaufgaben prüfen</li>
+<li>Stundenprotokolle einsammeln</li>
+<li>o.ä.</li>
+</ul>
+<li>Präsentationsphase (5 min)</li>
+<li>Übungsphase (15 min)</li>
+<li>Anwendungsphase/Transferphase (15 min)</li>
+<li>Schlussphase/Ausgangsphase (5 min):</li>
+<ul>
+<li>Zusammenfassen der Ergebnisse</li>
+<li>Erklären der Hausaufgaben</li>
+<li>Transfers</li>
+<li>Ausblick auf die nächste Stunde</li>
+<li>o.ä.</li>
+</ul>
+</ol>
+
+Die gewählte Zeitdauer muss eine ganze Zahl sein und sollte die maximal längste Zeit für das Element sein.
+Die bereits vergangene Zeit wird farblich unterstrichen. Nicht vergessen Zeiten für Umbauten und Organisation einzuplanen!!
+
+
+<!-- Methoden:
+
+Sozialformen:
+ -->
+
+<br>
+<img width="100%" src = "Beispiel_App_farben.svg">
+<br>
+<input type="button" value="Gehe zurück!" onclick="zurueck()">
+<input type="button" value="Gehe direkt zum eigenen Stunden erstellen über" onclick="layout()">
+
+</body>
+</html>

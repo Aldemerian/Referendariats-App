@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='de'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Schulung</title>
+    <link rel='stylesheet' href='background.css'/> 
+<script>
+function starten() {
+    window.location.assign("background.html")
+}
+function create() {
+    window.location.assign("newlesson.html")
+}
+function review() {
+    window.location.assign("background.html")
+}
+</script>
+</head>
+<body>
+
+<input type="button" value="Starte die 1. Stunde" onclick="starten()">
+<br>
+<input type="button" value="Erzeuge neues Stundenlayout" onclick="create()">
+<br>
+<input type="button" value="Überprüfe die letzte gehaltene Stunde" onclick="review()">
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='de'>
+  <head>
+    <meta charset='UTF-8'/>
+    <title>Schulung</title>
+    <link rel='stylesheet' href='background.css'/> 
+<script>
+var stunde;
+
+stunde = [
+		 {	"namen":"6a",
+			"eleNamen":	["Anfang der Stunde",
+				"Mitte der Stunde",
+				"Gruppenarbeit",
+				"Gruppenarbeit2",
+				"Ende der Stunde"
+				],
+			"zeit": ["1", "5", "3", "4", "10"]
+		},
+		{	"namen":"5a",
+			"eleNamen":	[
+				"foobar",
+				"Ende der Stunde"],
+			"zeit": ["100", "2"]
+		},
+		{	"namen":"7a",
+			"eleNamen":	[ 
+					"Anfang der Stunde",
+					"Ende der Stunde"],
+			"zeit": ["1", "2"]
+		},
+		{	"namen":"8a",		
+			"eleNamen":[ 
+					"Anfang der Stunde",
+					"Ende der Stunde"],
+			"zeit": ["1", "2"]
+		},
+		{	"namen":"9a",
+			"eleNamen":[
+				 "Anfang der Stunde",
+				 "Ende der Stunde"],
+					"zeit": ["1", "2"]
+		},
+		{	"namen":"10a",
+			"eleNamen": ["Anfang der Stunde",
+			"Ende der Stunde"],
+			"zeit": ["3", "4"]
+			}
+];
+
+function vorlage() {
+	localStorage.setItem("stunde", JSON.stringify(stunde));
+ 	var text = "Auf deinem Gerät wurde eine Vorlage für die Stunden erstellt";
+	document.getElementById("demo").innerHTML = text;
+}
+function tutorial() {
+    window.location.assign("tutorial.html")
+   }
+</script>
+</head>
+<body>
+
+
+<br>
+<input type="button" value="Erstelle eine Vorlage" onclick="vorlage()">
+<p id= "demo"></p>
+<br>
+<input type="button" value="Tutorial" onclick="tutorial()">
+
+</body>
+</html>

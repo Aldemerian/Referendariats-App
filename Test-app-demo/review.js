@@ -1,0 +1,129 @@
+var unterrichtsStunde = localStorage.getItem("stunde");
+newstunde = JSON.parse(unterrichtsStunde);
+
+//if (localStorage.getItem("stundenZeiten") === null){
+	//document.getElementById("error").innerHTML("Es sind noch keine Stunden gehalten worden");
+	//break;
+//}
+
+var stundenZeiten	= localStorage.getItem("stundenZeiten");
+stundenZeiten = JSON.parse(stundenZeiten);
+
+var stundenReview = localStorage.getItem("stundenReview");
+stundenReview = JSON.parse(stundenReview);
+	
+
+		
+	
+var heldHours =[];
+var heldHoursDate = [];
+var heldHoursName = [];
+var ergebnisHour = [];
+	
+console.log(heldHoursDate);
+var heldHoursDuration = [];
+	
+for (m=0; m< stundenReview.length; m++) {		
+	for (n=0; n<stundenReview[m].length-1; n++) {
+		//subtract array with that indexnumber
+		//calculate to min,sec
+		var big = stundenReview[m][n];
+		var small = stundenReview[m][n+1];	
+		ergebnis = small-big;
+		ergebnis = ergebnis/1000;
+		ergebnis = Math.round(ergebnis/60);		
+		ergebnisHour.push(ergebnis);
+		}
+	heldHours.push(stundenZeiten[m].time);
+	var heldDate = stundenZeiten[m].day +"." +(stundenZeiten[m].month+1) + "."+ stundenZeiten[m].year;
+	heldHoursDate.push(heldDate);
+	console.log(heldHoursDate);
+	heldHoursName.push(stundenZeiten[m].namen);
+	console.log(heldHoursName);
+}
+
+for (var i=0; i < newstunde.length; i++) {
+	var nameNumber = "tabelle"+newstunde[i].namen;
+	addtable(nameNumber,i);
+}
+
+function addtable(nameNumber, i) {
+	var u = document.createElement("H1");
+	var t = document.createTextNode(newstunde[i].namen);
+   u.appendChild(t);
+	document.body.appendChild(u);
+   var x = document.createElement("TABLE");
+   x.setAttribute("id", nameNumber);
+   x.setAttribute("name", newstunde[i].namen);
+   document.body.appendChild(x);
+	
+	var c = 0;
+	var header = x.createTHead();
+   var row = header.insertRow(0);
+   var cell = row.insertCell(c);
+   c++;
+   cell.innerHTML = "<b>Namen des Elements</b>";
+   cell = row.insertCell(c);
+   c++;
+   cell.innerHTML = "<b>Soll</b>";
+   cell = row.insertCell(c);
+   c++;
+   
+   //if () { an diesem tag die stunde gehalten wurde add column überschrift  
+   for (r =0; r< heldHoursDate.length; r++) { 
+   	if (heldHoursName[r] == newstunde[i].namen) {
+   		cell = row.insertCell(c);
+			cell.innerHTML = "<b>"+heldHoursDate[r]+"<b>";
+			b= true;
+			c++;
+		}
+		else {
+			b=false;			
+			}
+	}
+	
+	x = document.createElement("THEAD");
+   x.setAttribute("id", "name");
+   document.body.appendChild(x);    
+    
+	var x = document.createElement("BR");
+   document.body.appendChild(x);
+	
+	for (var k=0; k < newstunde[i].eleNamen.length; k++) {
+   	var y = document.createElement("TR");
+    	y.setAttribute("id", "myTr"+i+k);
+    	document.getElementById(nameNumber).appendChild(y);
+    	
+    	var z = document.createElement("TD");
+    	var t = document.createTextNode(newstunde[i].eleNamen[k]);
+    	z.appendChild(t);
+    	document.getElementById("myTr"+i+k).appendChild(z);
+    	
+    	var z = document.createElement("TD");
+    	var t = document.createTextNode(newstunde[i].zeit[k]);
+    	z.appendChild(t);
+    	document.getElementById("myTr"+i+k).appendChild(z);
+    	
+    	if (b == true) {
+    		var z = document.createElement("TD");
+    		var t = document.createTextNode(ergebnisHour[i]);
+    		console.log(t);
+    		z.appendChild(t);
+    		document.getElementById("myTr"+i+k).appendChild(z);
+    		console.log("me");
+    		}
+    }
+}	
+	
+	//create array lessonName+Time
+for (var q=0; q < stundenZeiten.length; q++) {
+	var lessonName = [];
+	var time = [];
+	lessonName.push(stundenReview[q].namen);
+	time.push(stundenReview[q].time);
+	console.log(time);	
+}
+
+function zurueck() {
+    window.location.assign("erste_folie.html")
+}

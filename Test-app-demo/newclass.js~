@@ -1,0 +1,9 @@
+var s;
+
+//load and copy lesson
+//var allLesson = Object.setPrototypeOf(lesson1.elemente);
+
+//let enumerableKeys = [];  
+//for (let key in allLesson) {  
+//  enumerableKeys.push(key);
+//}
